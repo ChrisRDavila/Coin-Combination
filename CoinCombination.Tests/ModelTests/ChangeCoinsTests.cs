@@ -37,7 +37,32 @@ namespace CoinCombination.Tests
       //Assert
       Assert.AreEqual(newAmount, newChange.Cents);
     }
-    
+
+    [TestMethod]
+    public void CoinCounter_DeterminesAmountOfCoins_Int()
+    {
+      Change coins = new Change(54);
+      int amountOfCoins = coins.CoinCounter();
+      Assert.AreEqual(6,amountOfCoins);
+    }
+
+    [TestMethod]
+    public void PennyCounter_FindPennies_Int()
+    {
+      Change coins = new Change (4);
+      int amountOfCoins = coins.CoinCounter();
+      int pennies = coins.GetPC();
+      Assert.AreEqual(4,pennies);
+    }
+
+    [TestMethod]
+    public void DimeCounter_FindPennies_Int()
+    {
+      Change coins = new Change (4);
+      int amountOfCoins = coins.CoinCounter();
+      int pennies = coins.GetPC();
+      Assert.AreEqual(4,pennies);
+    }
   }
 }
 
