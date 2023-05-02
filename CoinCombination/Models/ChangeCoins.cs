@@ -10,6 +10,23 @@ namespace CoinCombination.Models
     {
       Cents = money;
     }
+    
+    public int CoinCounter()
+    {
+      int quarterCounter = 0;
+      int dimeCounter = 0
+      int money = Cents;
+      while(money > 0)
+      {
+        if(money >=25)
+        {
+          money -= 25;
+          quarterCounter++;
+        }
+      }
+      return quarterCounter;
+    }
+
   }
 }
 
