@@ -56,12 +56,12 @@ namespace CoinCombination.Tests
     }
 
     [TestMethod]
-    public void DimeCounter_FindPennies_Int()
+    public void DimeCounter_FindDimes_Int()
     {
-      Change coins = new Change (4);
+      Change coins = new Change (20);
       int amountOfCoins = coins.CoinCounter();
-      int pennies = coins.GetPC();
-      Assert.AreEqual(4,pennies);
+      int dimes = coins.GetDC();
+      Assert.AreEqual(2,dimes);
     }
   }
 }

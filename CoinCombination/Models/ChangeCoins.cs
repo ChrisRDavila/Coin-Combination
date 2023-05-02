@@ -5,16 +5,39 @@ namespace CoinCombination.Models
     // Business Logic goes here.
     
     public int Cents{get;set;}
+    private int _qC;
+    private int _dC;
+    private int _nC;
+    private int _pC;
 
     public Change(int money)
     {
       Cents = money;
     }
     
+    public int GetQC()
+    {
+      return _qC;
+    }
+    public int GetDC()
+    {
+      return _dC;
+    }
+    public int GetNC()
+    {
+      return _nC;
+    }
+    public int GetPC()
+    {
+      return _pC;
+    }
+
     public int CoinCounter()
     {
       int quarterCounter = 0;
-      int dimeCounter = 0
+      int dimeCounter = 0;
+      int nickleCounter = 0;
+      int pennyCounter = 0;
       int money = Cents;
       while(money > 0)
       {
@@ -22,9 +45,25 @@ namespace CoinCombination.Models
         {
           money -= 25;
           quarterCounter++;
+        } else if (money >= 10)
+        {
+          money -= 10;
+          dimeCounter++;
+        } else if (money >= 5)
+        {
+          money -= 5;
+          nickleCounter++;
+        } else 
+        {
+          money -=1;
+          pennyCounter++;
         }
       }
-      return quarterCounter;
+      _pC = pennyCounter;
+      _dC = dimeCounter;
+      _nC = nickleCounter;
+      _qC = quarterCounter;
+      return quarterCounter + dimeCounter + nickleCounter + pennyCounter;
     }
 
   }
