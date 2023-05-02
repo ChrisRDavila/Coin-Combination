@@ -27,10 +27,6 @@ namespace CoinCombination
       Console.WriteLine($"The amount of dimes is {coins.GetDC()}");
       Console.WriteLine($"The amount of nickels is {coins.GetNC()}");
       Console.WriteLine($"The amount of pennies is {coins.GetPC()}");
-
-
-
-
     }
   }
 }
